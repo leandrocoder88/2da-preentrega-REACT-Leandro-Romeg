@@ -16,7 +16,7 @@ export const ItemListContainer = () => {
     });
     get.then((data) => {
       if (id) {
-        const filteredData = data.filter((d) => d.category === id );
+        const filteredData = data.filter(d => d.category === id );
         setItems(filteredData);
       } else {
         setItems(data);
@@ -25,8 +25,8 @@ export const ItemListContainer = () => {
   }, [id]);
 
   return (
-    <Container className="mt-4">
-      <ItemList items={items} />
+    <Container className="container">
+      {items !== null && <ItemList items={items} />}
     </Container>
   );
 };
